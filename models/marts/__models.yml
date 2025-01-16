@@ -28,7 +28,7 @@ models:
               values: ["new", "returning"]
 
   - name: orders
-    description: Order overview data mart, offering key details for each order inlcluding if it's a customer's first order and a food vs. drink item breakdown. One row per order.
+    description: Order overview data mart, offering key details for each order including if it's a customer's first order and a food vs. drink item breakdown. One row per order.
     tests:
       - dbt_utils.expression_is_true:
           expression: "count_food_items + count_drink_items = count_items"
@@ -74,3 +74,14 @@ models:
         description: A boolean indicating if this order included any food items.
       - name: is_drink_order
         description: A boolean indicating if this order included any drink items.
+
+  - name: orders_with_random_number
+    description: A data mart containing all orders from the `orders` table with an added random number column for each row.
+    columns:
+      - name: order_id
+        description: The unique key of the orders mart, matching the original `orders` table.
+        tests:
+          - not_null
+          - unique
+      - name: random_number
+        description: A randomly generated number for each order row.
