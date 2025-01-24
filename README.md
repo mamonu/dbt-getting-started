@@ -19,7 +19,7 @@ Welcome to the **DBT Sandbox Environment**! This GitHub Codespace template lets 
 
 Click the big green **'Use this template'** button, then select **'Create a new repository'**.
 
-![Click use template](picsassets/use-template.gif)
+![Click use template](.github/static/use-template.gif)
 
 ⚠️ **Note**: Make sure to create the repository in your personal GitHub space and **not** under `moj-analytical-services` or any other organization.
 
@@ -31,7 +31,7 @@ Click the big green **'Use this template'** button, then select **'Create a new 
 
 Navigate to **'Code'**, select **'Codespaces'**, and click **'Create codespace on main'**.
 
-![Create codespace on main](picsassets/open-codespace.gif)
+![Create codespace on main](.github/static/open-codespace.gif)
 
 This will set up a sandboxed development container with everything pre-configured for your dbt project.
 
@@ -44,6 +44,12 @@ This will set up a sandboxed development container with everything pre-configure
 <br/><br/>
 
 Setting up the codespace takes about **4 minutes**. 🕒 
+
+
+![Create codespace on main](.github/static/installing.png)
+
+
+
 Perfect time to brew yourself a nice cup of tea ☕️.
 
 <br/><br/>
@@ -62,6 +68,14 @@ Once the setup is complete, navigate to the terminal in your Codespace environme
 dbt build
 ```
 
+You should see something like :
+
+![Create codespace on main](.github/static/rundbtbuild.png)
+
+
+
+
+
 ---
 
 
@@ -72,10 +86,10 @@ dbt build
 
 To view and query your dbt transformation results directly in your Codespace, you'll need to install a DuckDB-compatible extension. 
 
-We recommend installing the **SQLTools** extension in VS Code for this purpose. 
+We recommend installing the **SQLTools** extension in VS Code for this purpose, togother with the **DuckDB driver for SQLTools**
 
-![Install SQL Tools Extension](picsassets/Extension-SQLTools.png)
-
+![Install SQL Tools Extension](.github/static/Extension-SQLTools.png)
+![Install SQL Tools Extension](.github/static/Extension-DuckDB-Driver-for-SQLTools.png)
 
 
 <br/><br/>
@@ -85,9 +99,20 @@ We recommend installing the **SQLTools** extension in VS Code for this purpose.
 
 <br/><br/>
 
-💡 **Tip**: Once installed, configure SQLTools to connect to your DuckDB database, 
+💡 **SQLTools Configuration Tips**: 
+
+- Once installed, configure SQLTools to connect to your DuckDB database, 
 which exists in `/reports/jaffle_shop.duckdb`and you'll be able to explore your transformed data with ease!
 
+- when asked about the location of your DB when creating the connection just put
+`/workspaces/{NAME_OF_YOUR_REPO}/reports/jaffle_shop.duckdb` taking care to change {NAME_OF_YOUR_REPO} to the name of your repo !
+
+- you might be asked to install a few bits the first time ... Just install them. 
+
+- sqlfluff can be uninstalled as it constantly spamming messages that are not at the moment important.
+
+- Also remember that when connected for the first time to the DuckDB database to run `SET SCHEMA 'analytics';` so you
+  can see the result of your dbt transformations
 
 <br/><br/>
 
