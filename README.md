@@ -109,7 +109,7 @@ which exists in `/reports/jaffle_shop.duckdb`and you'll be able to explore your 
 
 - you might be asked to install a few bits the first time ... Just install them. 
 
-- sqlfluff can be uninstalled as it constantly spamming messages that are not at the moment important.
+- sqlfluff can be uninstalled or muted as it constantly spamming messages that are not at the moment important.
   ![mute sqlfluff](.github/static/sqlfluffoff.png)
 
 
