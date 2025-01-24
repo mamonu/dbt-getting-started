@@ -110,6 +110,8 @@ which exists in `/reports/jaffle_shop.duckdb`and you'll be able to explore your 
 - you might be asked to install a few bits the first time ... Just install them. 
 
 - sqlfluff can be uninstalled as it constantly spamming messages that are not at the moment important.
+  ![mute sqlfluff](.github/static/sqlfluffoff.png)
+
 
 - Also remember that when connected for the first time to the DuckDB database to run `SET SCHEMA 'analytics';` so you
   can see the result of your dbt transformations
